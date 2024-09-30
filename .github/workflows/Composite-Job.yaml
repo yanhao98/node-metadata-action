@@ -10,3 +10,6 @@ jobs:
 
       - name : 📦 Setup Node + PNPM + install deps
         uses: ./.github/actions/setup-node-pnpm-install
+      - run: |
+          node --version
+          pnpm --version
