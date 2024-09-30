@@ -1,5 +1,4 @@
-# https://github.com/murielmay67/ci-demo
-name: GitHub Actions Demo
+name: Composite-Job
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
