@@ -29240,6 +29240,8 @@ async function run() {
         core.debug(new Date().toTimeString());
         // Set outputs for other workflow steps to use
         core.setOutput('time', new Date().toTimeString());
+        // 打印 node 的版本
+        console.log(`Node version: ${process.version}`);
         // Get the JSON webhook payload for the event that triggered the workflow
         const payload = JSON.stringify(github.context.payload, undefined, 2);
         console.log(`The event payload: ${payload}`);
