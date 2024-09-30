@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+import * as github from '@actions/github'
 import { wait } from './wait'
 
 /**
@@ -19,6 +20,10 @@ export async function run(): Promise<void> {
 
     // Set outputs for other workflow steps to use
     core.setOutput('time', new Date().toTimeString())
+
+    // Get the JSON webhook payload for the event that triggered the workflow
+    const payload = JSON.stringify(github.context.payload, undefined, 2)
+    console.log(`The event payload: ${payload}`)
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
