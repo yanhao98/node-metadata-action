@@ -55,7 +55,7 @@ jobs:
 
       - name: Test Local Action
         id: foo
-        uses: OWNER/hello-world-composite-action@TAG
+        uses: ./
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number "$RANDOM_NUMBER"
